@@ -1,0 +1,1849 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.0), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en", "undefined" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.cidoc-crm.org/rdfs/cidoc-crm", "http://metadata.net/harmony/abc", "http://www.w3.org/2000/01/rdf-schema", "http://purl.org/dc/terms", "http://www.w3.org/2001/XMLSchema", "http://www.europeana.eu/schemas/edm", "http://www.openarchives.org/ore/terms", "http://purl.org/vocab/frbr/core", "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl", "http://purl.org/dc/elements/1.1", "http://www.w3.org/2004/02/skos/core" ],
+    "title" : {
+      "en" : "Europeana Data Model (EDM) vocabulary"
+    },
+    "iri" : "http://www.europeana.eu/schemas/edm/",
+    "version" : "5.2.3",
+    "author" : [ "Antoine Isaac" ],
+    "description" : {
+      "en" : "The Europeana Data Model (EDM) is aimed at being an integration medium for collecting, connecting and enriching the descriptions provided by Europeana data providers. The RDF vocabulary for http://www.europeana.eu/schemas/edm/ defines the elements introduced by EDM (as opposed to the ones EDM re-uses from other namespaces)."
+    },
+    "comments" : {
+      "en" : "\n=======\nChanges between EDM-v53-120123.owl\nand EDM-v52-100730.owl\n=======\n1. Update of formal specification to v5.2.3\n2. Changed CRM namespace \n3. Added or changed formal axioms for Event, aggregatedCHO, currentLocation, hasMet, hasType, isAnnotationOf\n4. Property labels upper-cased\n5. Added language tags\n6. Checked Martin's latest mappings to CRM\n7. Added metadata on the owl:Ontology instance\n=======\nRemaining TODOs for EDM-v53-120123.owl\n=======\n- change FRBR namespace and mappings using http://metadataregistry.org/schema/show/id/5.html or FRBRoo\n- add Martin's mapping to FRBR(oo) for edm:incorporates (equivalent to crm:R14F.incorporates) and edm:WebResource (subclass of F24 Publication Expression)\n- try to capture formal cardinality constraints resulting from \"Obligation and Occurrence\" documentation, which should be attached to non-EDM constructs (esp. ore:Aggregation)\n- continue adding documentation values (skos:scopeNote, skos:example, etc, according to 1.), starting from edm:InformationResource. Add all Europeana examples and rationale notes for non-EDM constructs\n- keep specific EDM-doc properties for \"rationale\" and \"obligation and occurrence\". Use skos:definition for \"Europeana definition\", skos:example for \"Example\", skos:note for \"Europeana note\"\n      "
+    },
+    "other" : {
+      "creator" : [ {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "Antoine Isaac",
+        "type" : "label"
+      } ],
+      "contributor" : [ {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Hugo Borbinhas",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Nasos Drosopoulos",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Participants of Europeana Version 1.0 Work Package on Further Specification of Functionality and Interoperability aspects of Europeana (WP3)",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Vassilis Tzouvaras",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Julia Iwanowa",
+        "type" : "label"
+      }, {
+        "identifier" : "contributor",
+        "language" : "undefined",
+        "value" : "Martin Doerr",
+        "type" : "label"
+      } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "5.2.3",
+        "type" : "label"
+      } ],
+      "title" : [ {
+        "identifier" : "title",
+        "language" : "en",
+        "value" : "Europeana Data Model (EDM) vocabulary",
+        "type" : "label"
+      } ],
+      "seeAlso" : [ {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://europeanalabs.eu/wiki/EDMPrototypingTask11",
+        "type" : "iri"
+      }, {
+        "identifier" : "seeAlso",
+        "language" : "undefined",
+        "value" : "http://pro.europeana.eu/edm-documentation",
+        "type" : "iri"
+      } ]
+    }
+  },
+  "namespace" : [ ],
+  "metrics" : {
+    "classCount" : 32,
+    "objectPropertyCount" : 49,
+    "datatypePropertyCount" : 3,
+    "individualCount" : 0
+  },
+  "class" : [ {
+    "id" : "3",
+    "type" : "owl:Class"
+  }, {
+    "id" : "4",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "22",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "5",
+    "type" : "owl:complementOf"
+  }, {
+    "id" : "8",
+    "type" : "owl:Class"
+  }, {
+    "id" : "24",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "52",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "54",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "65",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "66",
+    "type" : "owl:Class"
+  }, {
+    "id" : "71",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "37",
+    "type" : "owl:Class"
+  }, {
+    "id" : "35",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "26",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "76",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "77",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "81",
+    "type" : "owl:Class"
+  }, {
+    "id" : "83",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "85",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "86",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "88",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "25",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "23",
+    "type" : "owl:Class"
+  }, {
+    "id" : "36",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "41",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "57",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "34",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "95",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "68",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "96",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "98",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "79",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "31",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "63",
+    "type" : "owl:unionOf"
+  }, {
+    "id" : "1",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "99",
+    "type" : "owl:Class"
+  }, {
+    "id" : "94",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "33",
+    "type" : "owl:equivalentClass"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "28",
+    "type" : "owl:Class"
+  }, {
+    "id" : "32",
+    "type" : "owl:equivalentClass"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "http://purl.org/vocab/frbr/core#Expression",
+    "baseIri" : "http://purl.org/vocab/frbr/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Expression"
+    },
+    "attributes" : [ "external" ],
+    "id" : "3"
+  }, {
+    "iri" : "http://www.w3.org/2004/02/skos/core#Concept",
+    "baseIri" : "http://www.w3.org/2004/02/skos/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Concept"
+    },
+    "attributes" : [ "external" ],
+    "id" : "4",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://purl.org/vocab/frbr/core#Manifestation",
+    "baseIri" : "http://purl.org/vocab/frbr/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Manifestation"
+    },
+    "attributes" : [ "external" ],
+    "id" : "13"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/TimeSpan",
+    "equivalent" : [ "24", "25", "26" ],
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "The class of \"abstract temporal extents, in the sense of Galilean physics,\n having a beginning, an end and a duration\" (CIDOC CRM)",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "TimeSpan",
+      "en" : "Time Span"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "22",
+    "superClasses" : [ "5", "23" ]
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/NonInformationResource",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "All resources that are not information resources.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "NonInformationResource",
+      "en" : "Non-Information Resource"
+    },
+    "subClasses" : [ "32", "22", "33", "4", "34", "35" ],
+    "attributes" : [ "complement" ],
+    "id" : "5",
+    "complement" : [ "31" ]
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/WebResource",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Information Resources that have at least one Web Representation and at least\na URI.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "WebResource",
+      "en" : "Web Resource"
+    },
+    "subClasses" : [ "37" ],
+    "id" : "8",
+    "superClasses" : [ "31" ]
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#E52.Time-Span",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "E52.Time-Span"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "24"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "52",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://metadata.net/harmony/abc#Place",
+    "baseIri" : "http://metadata.net/harmony/abc",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Place"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "54"
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#E18.Physical_Thing",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "E18.Physical_Thing"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "65"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/ProvidedCHO",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "This class has been mostly motivated by the need to assign a type to the “central node” in the EDM pattern, during the ingestion process, related to the XML expression of EDM at that stage. It was especially intended to fit the cases where edm:PhysicalThing  cannot be used as the type of the resource standing for the real-world object (independently of any specific data contributor perspective).",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This class comprises the Cultural Heritage objects that Europeana collects descriptions about.",
+        "type" : "label"
+      } ],
+      "scopeNote" : [ {
+        "identifier" : "scopeNote",
+        "language" : "en",
+        "value" : "Rationale: This class is the range of edm:aggregatedCHO. A resource of type ProvidedCHO can be the subject of statements using edm:isRelatedTo or any more specific property.",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Mona Lisa, Winged Victory of Samothrace",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ProvidedCHO",
+      "en" : "Provided CHO"
+    },
+    "id" : "66"
+  }, {
+    "iri" : "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#space-region",
+    "baseIri" : "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "space-region"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "71"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/EuropeanaObject",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Any object that is the result of Europeana’s activities",
+        "type" : "label"
+      } ],
+      "scopeNote" : [ {
+        "identifier" : "scopeNote",
+        "language" : "en",
+        "value" : "Rationale: This class is used to tag objects that are the result of activity of Europeana, and, as such, objects on which Europeana holds rights",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Any content created by the users through the service made available by Europeana for that purpose",
+        "type" : "label"
+      }, {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "Any instance of the class EuropeanaAggregation",
+        "type" : "label"
+      }, {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "An annotation created by a user through the Europeana portal",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "EuropeanaObject",
+      "en" : "Europeana Object"
+    },
+    "subClasses" : [ "28" ],
+    "id" : "37",
+    "superClasses" : [ "8" ]
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/PhysicalThing",
+    "equivalent" : [ "65" ],
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "A persistent physical item such as a painting, a building, a book or a stone.\nPersons are not items. This class represents Cultural Heritage Objects known to Europeana to be physical things (such as Mona Lisa) as well as all physical things Europeana refers to in the descriptions of Cultural Heritage Objects (such as the Rosetta Stone).",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "PhysicalThing",
+      "en" : "Physical Thing"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "35",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl#time-interval",
+    "baseIri" : "http://www.loa-cnr.it/ontologies/DOLCE-Lite.owl",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "time-interval"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "26"
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#E4.Period",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "E4.Period"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "76"
+  }, {
+    "iri" : "http://metadata.net/harmony/abc#Temporality",
+    "baseIri" : "http://metadata.net/harmony/abc",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Temporality"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "77"
+  }, {
+    "iri" : "http://www.openarchives.org/ore/terms/Proxy",
+    "baseIri" : "http://www.openarchives.org/ore/terms",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Proxy"
+    },
+    "attributes" : [ "external" ],
+    "id" : "81"
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#E89.Propositional_Object",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "E89.Propositional_Object"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "83"
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#E53.Place",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "E53.Place"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "85"
+  }, {
+    "iri" : "http://purl.org/vocab/frbr/core#Place",
+    "baseIri" : "http://purl.org/vocab/frbr/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Place"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "86"
+  }, {
+    "iri" : "http://purl.org/vocab/frbr/core#Event",
+    "baseIri" : "http://purl.org/vocab/frbr/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Event"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "88"
+  }, {
+    "iri" : "http://metadata.net/harmony/abc#Time",
+    "baseIri" : "http://metadata.net/harmony/abc",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Time"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "25"
+  }, {
+    "iri" : "http://purl.org/dc/terms/PeriodOfTime",
+    "baseIri" : "http://purl.org/dc/terms",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "PeriodOfTime"
+    },
+    "subClasses" : [ "22" ],
+    "attributes" : [ "external" ],
+    "id" : "23"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "36",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "41",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "57",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/Agent",
+    "equivalent" : [ "94" ],
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "undefined",
+        "value" : "This class comprises people, either individually or in groups, who have the\npotential to perform intentional actions for which they can be held responsible.",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "undefined",
+        "value" : "Leonardo da Vinci, the British Museum, W3C",
+        "type" : "label"
+      } ],
+      "scopeNote" : [ {
+        "identifier" : "scopeNote",
+        "language" : "undefined",
+        "value" : "Rationale: This class is a domain of edm:wasPresentAt",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Agent",
+      "en" : "Agent"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "34",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "95",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "id" : "68",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "96",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "98",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "79",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/InformationResource",
+    "equivalent" : [ "83" ],
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An information resource is a resource whose essential characteristics can be conveyed in a single message. It can be associated with a URI, it can have a representation, for example: a text is an InformationResource.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "InformationResource",
+      "en" : "Information Resource"
+    },
+    "union" : [ "99", "3", "13" ],
+    "subClasses" : [ "8" ],
+    "attributes" : [ "union", "equivalent" ],
+    "id" : "31"
+  }, {
+    "instances" : 0,
+    "union" : [ "31", "34", "35" ],
+    "attributes" : [ "union", "anonymous" ],
+    "id" : "63"
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "1",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://purl.org/vocab/frbr/core#Work",
+    "baseIri" : "http://purl.org/vocab/frbr/core",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Work"
+    },
+    "attributes" : [ "external" ],
+    "id" : "99"
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#E39.Actor",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "E39.Actor"
+    },
+    "attributes" : [ "external", "equivalent" ],
+    "id" : "94"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/Event",
+    "equivalent" : [ "76", "77", "88" ],
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "Events are identified either by the content provider or by Europeana enrichment at ingestion time",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An event is a change \"of states in cultural, social or physical systems,\n regardless of scale, brought about by a series or group of coherent physical,\ncultural, technological or legal phenomena\" (E5 Event in CIDOC CRM) or a \"set of coherent phenomena or cultural manifestations bounded in time and  space\" (E4 Period in CIDOC CRM)\n",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "the change of custody of Mona Lisa",
+        "type" : "label"
+      }, {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "the 2nd World War",
+        "type" : "label"
+      }, {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "the act of painting Mona Lisa",
+        "type" : "label"
+      } ],
+      "scopeNote" : [ {
+        "identifier" : "scopeNote",
+        "language" : "en",
+        "value" : "Rationale:This class is a domain of edm:happenedAt and the domain of edm:occurredAt",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Event",
+      "en" : "Event"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "33",
+    "superClasses" : [ "5" ]
+  }, {
+    "iri" : "http://www.openarchives.org/ore/terms/Aggregation",
+    "baseIri" : "http://www.openarchives.org/ore/terms",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Aggregation"
+    },
+    "subClasses" : [ "28" ],
+    "attributes" : [ "external" ],
+    "id" : "7"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/EuropeanaAggregation",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "note" : [ {
+        "identifier" : "note",
+        "language" : "en",
+        "value" : "An instance of EuropeanaAggregation is created at ingestion time for each different Cultural Heritage Object recognized by Europeana. Such instance is associated to the Cultural Heritage Object that it is about, by the property edm:aggregatedCHO",
+        "type" : "label"
+      } ],
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "undefined",
+        "value" : "The set of resources related to a single Cultural Heritage Object that\ncollectively represent that object in Europeana. Such set consists of: all\ndescriptions about the object that Europeana collects from (possibly different) content providers, including thumbnails and other forms of abstractions, as well as of the description of the object Europeana builds.",
+        "type" : "label"
+      } ],
+      "scopeNote" : [ {
+        "identifier" : "scopeNote",
+        "language" : "en",
+        "value" : "Obligation and Occurence: The relation between the Cultural Heritage Objects represented in Europeana and the instances of the class EuropeanaAggregation is one-to-one, in the data maintained by Europeana: every Cultural Heritage Object is represented by an instance of EuropeanaAggregation, and every instance of EuropeanaAggregation represent a Cultural Heritage Object.",
+        "type" : "label"
+      }, {
+        "identifier" : "scopeNote",
+        "language" : "en",
+        "value" : "Rationale: This class is used in Europeana to gather in a single conceptual unit all the information about a Cultural Heritage Object, necessary for all operations on these objects.",
+        "type" : "label"
+      } ],
+      "example" : [ {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "The painting Mona Lisa is a Cultural Heritage Object represented in Europeana by one EuropeanaAggregation instance",
+        "type" : "label"
+      }, {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "The journal \"Le Temps\" is a Cultural Heritage Object represented in Europeana by one EuropeanaAggregation instance",
+        "type" : "label"
+      }, {
+        "identifier" : "example",
+        "language" : "en",
+        "value" : "The 56th issue of \"Le Temps\" is a (different) Cultural Heritage Object represented in Europeana by another EuropeanaAggregation instance",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "EuropeanaAggregation",
+      "undefined" : "Europeana Aggregation"
+    },
+    "id" : "28",
+    "superClasses" : [ "37", "7" ]
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/Place",
+    "equivalent" : [ "71", "85", "86", "54" ],
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "instances" : 0,
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An \"extent in space, in particular on the surface of the earth, in the pure sense of physics: independent from temporal phenomena and matter\" (CIDOC CRM)",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "Place",
+      "en" : "Place"
+    },
+    "attributes" : [ "equivalent" ],
+    "id" : "32",
+    "superClasses" : [ "5" ]
+  } ],
+  "property" : [ {
+    "id" : "0",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "6",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "14",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "2",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "29",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "20",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "38",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "40",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "43",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "44",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "45",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "46",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "47",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "49",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "50",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "51",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "53",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "55",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "42",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "56",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "39",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "62",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "64",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "67",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "69",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "70",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "72",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "73",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "75",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "78",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "82",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "80",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "84",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "61",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "87",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "10",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "74",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "89",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "58",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "90",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "59",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "11",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "12",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "97",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "100",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "91",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "92",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "101",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "48",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "93",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "60",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "102",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "103",
+    "type" : "owl:datatypeProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "http://purl.org/dc/elements/1.1/contributor",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "contributor"
+    },
+    "superproperty" : [ "2" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "0"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/hasView",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "8",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property relates a ORE aggregation about a CHO with a web resource\nproviding a view of that CHO. Examples of view are: a thumbnail, a textual\nabstract and a table of contents. The ORE aggregation may be a Europeana\nAggregation, in which case the view is an object owned by Europeana (i.e., an instance of edm:EuropeanaObject) or an aggregation contributed by a content provider. In order to capture both these cases, the domain of edm:hasView is ore:Aggregation and its range is edm:WebResource",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasView",
+      "en" : "Has View"
+    },
+    "superproperty" : [ "9" ],
+    "domain" : "7",
+    "subproperty" : [ "10", "11", "12" ],
+    "attributes" : [ "object" ],
+    "id" : "6"
+  }, {
+    "iri" : "http://purl.org/dc/terms/isVersionOf",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "isVersionOf"
+    },
+    "superproperty" : [ "15" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "14"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/hasMet",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "edm:hasMet relates a resource with the objects or phenomena that have happened to or have happened together with the resource under consideration. We can abstractly think of history and the present as a series of “meetings” between people and other things in space-time. Therefore we name this relationship as the things the object “has met” in the course of its existence. These meetings are events in the proper sense, in which other people and things participate in any role.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasMet",
+      "en" : "Has Met"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "1",
+    "subproperty" : [ "17", "18", "0", "19", "20", "21" ],
+    "attributes" : [ "object" ],
+    "id" : "2"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/coverage",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "coverage"
+    },
+    "superproperty" : [ "2" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "17"
+  }, {
+    "range" : "7",
+    "domain" : "28",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isNextInSequence",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that R comes immediately after R in the order created by their being parts of S.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isNextInSequence",
+      "en" : "Is Next In Sequence"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "29"
+  }, {
+    "range" : "31",
+    "domain" : "8",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "30"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/creator",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "creator"
+    },
+    "superproperty" : [ "2" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/provider",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "34",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Name of the organization that delivers data to Europeana",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "provider",
+      "en" : "Europeana Provider"
+    },
+    "superproperty" : [ "2" ],
+    "domain" : "36",
+    "attributes" : [ "object" ],
+    "id" : "21"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/publisher",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "publisher"
+    },
+    "superproperty" : [ "2" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "19"
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#P138F.represents",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "P138F.represents"
+    },
+    "domain" : "1",
+    "subproperty" : [ "39" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "38"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isShownAt",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "8",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An unambiguous URL reference to the digital object on the provider’s web site in its full information context.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isShownAt",
+      "en" : "Is Shown At"
+    },
+    "superproperty" : [ "42" ],
+    "domain" : "41",
+    "attributes" : [ "object" ],
+    "id" : "40"
+  }, {
+    "range" : "37",
+    "domain" : "28",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "43"
+  }, {
+    "range" : "8",
+    "domain" : "37",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "44"
+  }, {
+    "range" : "23",
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "45"
+  }, {
+    "range" : "5",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "46"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/format",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "format"
+    },
+    "superproperty" : [ "48" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "47"
+  }, {
+    "range" : "5",
+    "domain" : "33",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "49"
+  }, {
+    "range" : "5",
+    "domain" : "35",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "50"
+  }, {
+    "range" : "5",
+    "domain" : "34",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "51"
+  }, {
+    "range" : "5",
+    "domain" : "22",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "53"
+  }, {
+    "range" : "5",
+    "domain" : "32",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "55"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/landingPage",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "8",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property captures the relation between an aggregation representing a\nCultural Heritage Object and the Web Resource representing that Object on\nthe provider’s web site.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "landingPage",
+      "en" : "Landing Page"
+    },
+    "superproperty" : [ "9" ],
+    "domain" : "41",
+    "subproperty" : [ "40" ],
+    "attributes" : [ "object" ],
+    "id" : "42"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/source",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "source"
+    },
+    "superproperty" : [ "15" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "56"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isRepresentationOf",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "57",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property associates an information resource to the resource (if any) that it represents",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isRepresentationOf",
+      "en" : "Is Representation Of"
+    },
+    "superproperty" : [ "58", "38" ],
+    "domain" : "31",
+    "attributes" : [ "object" ],
+    "id" : "39"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isDerivativeOf",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property captures a narrower notion of derivation than edm:isSimilarTo, in the sense that it relates a resource to another one, obtained by reworking, reducing, expanding, parts or the whole contents of the former, and possibly adding some minor parts. Versions have an even narrower meaning, in that it requires common identity between the related resources. Translations, summaries, abstractions etc. do not qualify as versions, but do qualify as derivatives.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isDerivativeOf",
+      "en" : "Is Derivative Of"
+    },
+    "superproperty" : [ "59" ],
+    "domain" : "1",
+    "subproperty" : [ "60", "61", "14", "56" ],
+    "attributes" : [ "object" ],
+    "id" : "15"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/wasPresentAt",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "33",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property associates the people, things or information resources with an event at which they were present",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "wasPresentAt",
+      "en" : "Was Present At"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "63",
+    "attributes" : [ "object" ],
+    "id" : "62"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/type",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "type"
+    },
+    "superproperty" : [ "48" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "64"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/ugc",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "68",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This element is used to identify user generated content (also called user created content).  It should be applied to all digitised or born digital content contributed by the general public and collected by Europeana through a crowdsourcing initiative or project.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "ugc",
+      "en" : "UGC"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype" ],
+    "id" : "67"
+  }, {
+    "iri" : "http://www.openarchives.org/ore/terms/proxyFor",
+    "baseIri" : "http://www.openarchives.org/ore/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "proxyFor"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "69"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/occurredAt",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "22",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property associates an event to the smallest known time span that\noverlaps with the occurrence of that event",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "occurredAt",
+      "en" : "Occured At"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "33",
+    "attributes" : [ "object" ],
+    "id" : "70"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/dataProvider",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "34",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This element is specifically included to allow the name of the organisation who supplies data to Europeana indirectly via an aggregator to be recorded and displayed in the portal. Aggregator names are recorded in edm:provider. If an organisation provides data directly to Europeana (i.e. not via an aggregator) the values in edm:dataProvider and edm:provider will be the same. Organisation names should be provided as an ordinary text string until the Europeana Authority File for Organisations has been established. At that point providers will be able to send an identifier from the file instead of a text string. The name provided should be the preferred form of the name in the language the provider chooses as the default language for display in the portal. Countries with multiple languages may prefer to concatenate the name in more than one language (See the example below.) Note: Europeana Data Provider is not necessarily the institution where the physical object is located.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "dataProvider",
+      "en" : "Europeana Data Provider"
+    },
+    "domain" : "7",
+    "attributes" : [ "object" ],
+    "id" : "72"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/realizes",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "31",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property describes a relation between a physical thing and the information resource that is contained in it, visible at it or otherwise carried by it, if applicable.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "realizes",
+      "en" : "Realizes"
+    },
+    "superproperty" : [ "74" ],
+    "domain" : "35",
+    "attributes" : [ "object" ],
+    "id" : "73"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/happenedAt",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "32",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property associates an event with the place at which the event\nhappened.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "happenedAt",
+      "en" : "Happened At"
+    },
+    "superproperty" : [ "16" ],
+    "cardinality" : "1",
+    "domain" : "33",
+    "attributes" : [ "object" ],
+    "id" : "75"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/currentLocation",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "32",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "The geographic location and/or name of the repository, building, site, or other entity whose boundaries presently include the resource.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "currentLocation",
+      "en" : "Current Location"
+    },
+    "superproperty" : [ "80" ],
+    "domain" : "79",
+    "attributes" : [ "object" ],
+    "id" : "78"
+  }, {
+    "iri" : "http://purl.org/dc/terms/hasVersion",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasVersion"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "82"
+  }, {
+    "iri" : "http://purl.org/dc/terms/spatial",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "spatial"
+    },
+    "domain" : "1",
+    "subproperty" : [ "78" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "80"
+  }, {
+    "iri" : "http://purl.org/dc/terms/hasFormat",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "hasFormat"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "84"
+  }, {
+    "iri" : "http://purl.org/dc/terms/replaces",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "replaces"
+    },
+    "superproperty" : [ "15" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "61"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/rights",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "Information about copyright of the digital object as specified by isShownBy\nand isShownAt",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "rights",
+      "en" : "Europeana Rights"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "87"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/object",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "8",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "The URL of a thumbnail representing the digital object or, if there is no such\nthumbnail, the URL of the digital object in the best resolution available on the\nweb site of the data provider from which a thumbnail could be generated. This will often be the same URL as given in edm:isShownBy.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "object",
+      "en" : "Object"
+    },
+    "superproperty" : [ "6" ],
+    "domain" : "41",
+    "attributes" : [ "object" ],
+    "id" : "10"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isRelatedTo",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "edm:isRelatedTo is the most general contextual property in EDM. Contextual\nproperties have typically to do either with the things that have happened to or together with the object under consideration, or what the object refers to by its shape, form or features in a figural or encoded form. For sake of simplicity, we include in the contextual relationships also the scholarly classification, which may have either to do with the role and cultural connections of the object in the past, or its kind of structure, substance or contents as it can be verified at present.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isRelatedTo",
+      "en" : "Is Related To"
+    },
+    "domain" : "1",
+    "subproperty" : [ "48", "58", "73", "16" ],
+    "attributes" : [ "object" ],
+    "id" : "74"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/incorporates",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property captures the use of some resource to add value to another\nresource. Such resources may be nested, such as performing a theater play text, and then recording the performance, or creating an artful edition of a collection of poems or just aggregating various poems in an anthology. There may be no single part that contains ultimately the incorporated object, which may be dispersed in the presentation. Therefore, incorporated resources do in general not form proper parts. Incorporated resources are not part of the same resource, but are taken from other resources, and have an independent history. Therefore edm:incorporates is not a sub-property of dcterm:hasPart.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "incorporates",
+      "en" : "Incorporates"
+    },
+    "superproperty" : [ "59" ],
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "89"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/date",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "date"
+    },
+    "superproperty" : [ "2" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "18"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/subject",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "subject"
+    },
+    "superproperty" : [ "74" ],
+    "domain" : "1",
+    "subproperty" : [ "90", "91", "39" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "58"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/aggregatedCHO",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "66",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property associates an ORE aggregation with the Cultural Heritage\nObject(s) (CHO for short) it is about.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "aggregatedCHO",
+      "en" : "Aggregated Cultural Heritage Object"
+    },
+    "superproperty" : [ "92", "58", "9" ],
+    "cardinality" : "1",
+    "domain" : "7",
+    "attributes" : [ "object" ],
+    "id" : "90"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isSimilarTo",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "The most generic derivation property, covering also the case of questionable derivation. Is Similar To asserts that parts of the contents of one resource exhibit common features with respect to ideas, shapes, structures, colors, words, plots, topics with the contents of the related resource. Those common features may be attributed to a common origin or influence (in particular for derivation), but also to more generic cultural or psychological factors.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isSimilarTo",
+      "en" : "Is Similar To"
+    },
+    "superproperty" : [ "16" ],
+    "domain" : "1",
+    "subproperty" : [ "93", "15", "89" ],
+    "attributes" : [ "object" ],
+    "id" : "59"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/relation",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "relation"
+    },
+    "superproperty" : [ "74" ],
+    "domain" : "1",
+    "subproperty" : [ "62", "75", "59", "2", "70", "29" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "16"
+  }, {
+    "iri" : "http://purl.org/dc/terms/tableOfContents",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "tableOfContents"
+    },
+    "superproperty" : [ "6" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isShownBy",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "8",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "An unambiguous URL reference to the digital object on the provider’s web site in the best available resolution/quality.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isShownBy",
+      "en" : "Is Shown By"
+    },
+    "superproperty" : [ "6" ],
+    "domain" : "41",
+    "attributes" : [ "object" ],
+    "id" : "12"
+  }, {
+    "iri" : "http://purl.org/dc/elements/1.1/language",
+    "baseIri" : "http://purl.org/dc/elements/1.1",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "language"
+    },
+    "superproperty" : [ "48" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "97"
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#P67F.refers_to",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "P67F.refers_to"
+    },
+    "domain" : "1",
+    "subproperty" : [ "91" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "100"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isAnnotationOf",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "96",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property relates an annotation (a Europeana object) with the resource\nthat it annotates.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isAnnotationOf",
+      "en" : "Is Annotation Of"
+    },
+    "superproperty" : [ "58", "100" ],
+    "domain" : "37",
+    "attributes" : [ "object" ],
+    "id" : "91"
+  }, {
+    "iri" : "http://www.openarchives.org/ore/terms/aggregates",
+    "baseIri" : "http://www.openarchives.org/ore/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "aggregates"
+    },
+    "domain" : "1",
+    "subproperty" : [ "90", "6", "42" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "9"
+  }, {
+    "iri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm#P129F.is_about",
+    "baseIri" : "http://www.cidoc-crm.org/rdfs/cidoc-crm",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "P129F.is_about"
+    },
+    "domain" : "1",
+    "subproperty" : [ "90" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "92"
+  }, {
+    "iri" : "http://purl.org/dc/terms/isReplacedBy",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "isReplacedBy"
+    },
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "101"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/hasType",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "5",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property relates a resource with the concepts it belongs to in a suitable\ntype system such as MIME or any thesaurus that captures categories of objects in a given field (e.g., the “Objects” facet in Getty’s Art and Architecture Thesaurus). It does not capture aboutness.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "hasType",
+      "en" : "Has Type"
+    },
+    "superproperty" : [ "74" ],
+    "domain" : "98",
+    "subproperty" : [ "64", "47", "97" ],
+    "attributes" : [ "object" ],
+    "id" : "48"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/isSuccessorOf",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This property captures the relation between the continuation of a resource and that resource. This applies to a story, a serial, a journal etc. No content of the successor resource is identical or has a similar form with that of the precursor. The similarity is only in the context, subjects and figures of a plot. Successors typically form part of a common whole – such as a trilogy, a journal, etc.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "isSuccessorOf",
+      "en" : "Is Successor Of"
+    },
+    "superproperty" : [ "59" ],
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "93"
+  }, {
+    "iri" : "http://purl.org/dc/terms/isFormatOf",
+    "baseIri" : "http://purl.org/dc/terms",
+    "range" : "1",
+    "label" : {
+      "IRI-based" : "isFormatOf"
+    },
+    "superproperty" : [ "15" ],
+    "domain" : "1",
+    "attributes" : [ "external", "object" ],
+    "id" : "60"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/uri",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "1",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "This is a tag created by a user through the Europeana interface.",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "uri",
+      "en" : "Europeana URI"
+    },
+    "domain" : "1",
+    "attributes" : [ "object" ],
+    "id" : "102"
+  }, {
+    "iri" : "http://www.europeana.eu/schemas/edm/type",
+    "baseIri" : "http://www.europeana.eu/schemas/edm",
+    "range" : "52",
+    "annotations" : {
+      "definition" : [ {
+        "identifier" : "definition",
+        "language" : "en",
+        "value" : "The Europeana material type of the resource",
+        "type" : "label"
+      } ]
+    },
+    "label" : {
+      "IRI-based" : "type",
+      "en" : "Europeana Type"
+    },
+    "domain" : "1",
+    "attributes" : [ "datatype" ],
+    "id" : "103"
+  } ]
+}

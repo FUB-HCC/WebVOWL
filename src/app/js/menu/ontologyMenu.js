@@ -8,7 +8,7 @@ var unescape = require("lodash/unescape");
 module.exports = function (graph) {
 
 	var ontologyMenu = {},
-		DEFAULT_JSON_NAME = "foaf", // This file is loaded by default
+		DEFAULT_JSON_NAME = "EDM-v523-120123", // This file is loaded by default
 		loadingError = d3.select("#loading-error"),
 		loadingProgress = d3.select("#loading-progress"),
 		ontologyMenuTimeout,

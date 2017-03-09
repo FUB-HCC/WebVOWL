@@ -105,16 +105,7 @@ module.exports = function (graph) {
 		searchLineEdit.on("keydown", userNavigation);
 		searchLineEdit.on("click", toggleSearchEntryView);
 		searchLineEdit.on("mouseover", hoverSearchEntryView);
-        var locateButton= d3.select("#locateSearchResult");
-        locateButton.on("click",function(){
-            graph.locateSearchResult();
-        });
-
-        locateButton.on("mouseover",function(){
-            searchMenu.hideSearchEntries();
-        });
-
-    };
+	};
 
 	function hoverSearchEntryView() {
 		searchMenu.showSearchEntries();
@@ -422,7 +413,6 @@ module.exports = function (graph) {
 
 	searchMenu.clearText=function(){
 		searchLineEdit.node().value="";
-        d3.select("#locateSearchResult").classed("highlighted", false);
 		var htmlCollection = dropDownContainer.node().children;
 		var numEntries = htmlCollection.length;
 		for (var i = 0; i < numEntries; i++){
