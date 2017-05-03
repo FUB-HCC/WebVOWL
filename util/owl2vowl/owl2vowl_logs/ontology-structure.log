@@ -1,0 +1,10 @@
+2017-05-03 17:29:01 IRIConverter - Converting IRIs...
+2017-05-03 17:29:01 IRIConverter - Loading ontologies ... [file:/var/www/fu/WebVOWL/util/owl2vowl/./cidoc_crm_v6.2-draft-2015August.rdfs.rdf,  []]
+2017-05-03 17:29:02 IRIConverter - Ontology IRI is anonymous. Use loaded URI/IRI instead.
+2017-05-03 17:29:02 IRIConverter - Ontologies loaded! Main Ontology: file:/var/www/fu/WebVOWL/util/owl2vowl/./cidoc_crm_v6.2-draft-2015August.rdfs.rdf
+2017-05-03 17:29:02 DataPropertyVisitor - Sub Data property axiom not supported yet.
+2017-05-03 17:29:02 DataPropertyVisitor - Sub Data property axiom not supported yet.
+2017-05-03 17:29:02 DataPropertyVisitor - Sub Data property axiom not supported yet.
+2017-05-03 17:29:02 DataPropertyVisitor - Sub Data property axiom not supported yet.
+2017-05-03 17:29:02 DataPropertyVisitor - Sub Data property axiom not supported yet.
+2017-05-03 17:29:02 DataPropertyVisitor - Sub Data property axiom not supported yet.
